@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        * {
+              margin : 0;
+              padding: 0;
+              box-sizing:border-box;
+          }
+
+          body {
+              font-family: Arial, Helvetica, sans-serif;
+              background: linear-gradient(50deg ,black , rgb(51, 9, 101) , rgb(164, 85, 167));
+              
+          }
+
+          .slider {
+              position : relative;
+              width : 100%;
+              max-width: 800px;
+              margin: 50px auto;
+              border-radius: 10px;
+              overflow: hidden;
+              background-color: rgb(14, 5, 16);
+              box-shadow: 0 4px 15px rgba(159, 164, 246, 0.936);
+            }          
+
+            input[type = "radio"] {
+                display: none;
+            }
+
+            .slides {
+                display: flex;
+                transition: transform 0.5s ease , opacity 0.5s ease;
+                position: relative;
+            }
+
+            .slide {
+                min-width: 100%;
+                display: flex;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                position: relative;
+            }
+
+             img {
+                 height: auto;
+                 width : 100%;
+                 object-fit: cover;
+                 border-radius:  10px;
+                }
+            .caption {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color:white;
+                background-color: rgba(88, 86, 86, 0.696);
+                padding : 10px;
+                border-radius: 5px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .dots {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top:  30px;
+                margin-bottom: 20px;
+            }
+
+            .dot {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: rgba(255,255,255,0.5);
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+            input#img1:checked ~ .slides {
+                transform : translateX(0);
+            }
+
+            input#img2:checked ~ .slides {
+                transform : translateX(-100%);
+            }
+
+            input#img3:checked ~ .slides {
+                transform : translateX(-200%);
+            }
+
+            input#img4:checked ~ .slides {
+                transform : translateX(-300%);
+            }
+
+            input#img5:checked ~ .slides {
+                transform : translateX(-400%);
+            }
+            
+            input#img1:checked ~ .dots label[for="img1"],
+            input#img2:checked ~ .dots label[for="img2"],
+            input#img3:checked ~ .dots label[for="img3"],
+            input#img4:checked ~ .dots label[for="img4"],
+            input#img5:checked ~ .dots label[for="img5"] {
+                background-color: white;
+                transform: scale(1.3);
+            }
+
+            .dot:hover {
+                background-color: rgba(255,255,255,0.8);
+                transform: scale(1.4);
+            }
+
+            input#img1:checked ~ .slides .slide:nth-child(1),
+            input#img2:checked ~ .slides .slide:nth-child(2),
+            input#img3:checked ~ .slides .slide:nth-child(3),
+            input#img4:checked ~ .slides  .slide:nth-child(4),
+            input#img5:checked ~ .slides  .slide:nth-child(5) {            
+                opacity : 1;
+            }
+
+            input#img1:checked ~ .slides .slide:nth-child(1) {            
+                opacity : 1;
+            }
+
+            input#img2:checked ~ .slides .slide:nth-child(2) {
+                opacity : 1;
+            }
+
+            input#img3:checked ~ .slides .slide:nth-child(3) {            
+                opacity : 1;
+            }
+
+            input#img4:checked ~ .slides .slide:nth-child(4) {            
+                opacity : 1;
+            }
+
+            input#img5:checked ~ .slides .slide:nth-child(5) {            
+                opacity : 1;
+            }
+
+            @media (max-width : 600px) {
+                .slider {
+                    width : 100%;
+                }
+            }
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+
+        <input type="radio" name="slider" id="img1" checked>
+        <input type="radio" name="slider" id="img2" >
+        <input type="radio" name="slider" id="img3" >
+        <input type="radio" name="slider" id="img4" >
+        <input type="radio" name="slider" id="img5" >
+
+        <div class="slides">
+            <div class="slide">
+                <img src="london1.jpg" alt="image 1">
+                <div class="caption">London Bridge</div>
+            </div>
+            <div class="slide">
+                <img src="taj.jpg" alt="image 2">
+                <div class="caption">Taj Mahal</div>
+            </div>
+            <div class="slide">
+                <img src="lotus.jpg" alt="image 3">
+                <div class="caption">Lotus Temple</div>
+            </div>
+            <div class="slide">
+                <img src="manali.jpg" alt="image 4">
+                <div class="caption">Manali</div>
+            </div>
+            <div class="slide">
+                <img src="paris.jpg" alt="image 5">
+                <div class="caption">Paris</div>
+            </div>
+        </div>
+
+        <div class="dots">
+            <label for="img1" class="dot"></label>
+            <label for="img2" class="dot"></label>
+            <label for="img3" class="dot"></label>
+            <label for="img4" class="dot"></label>
+            <label for="img5" class="dot"></label>
+        </div>
+    </div> <!-- end slider-->
+    
+</body>
+</html>
