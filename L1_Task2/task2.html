@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient( 140deg, #ffe135,#fba0e3 ,#f4d81c);
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+img {
+   max-width: 200px;
+}
+
+.container {
+    margin: 20px auto;
+    border-radius: 10px;
+    background: 0 4px 6px rgba(0, 0, 0, 0.13);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+button {
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform : scale(1.05);
+}
+
+#changecolor {
+    background-color: rgb(5, 12, 150);
+    color: white;
+}
+
+
+#calculator {
+    margin-top : 30px;
+    background: rgba(7, 7, 7, 0.703);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px black;
+    display: inline-block;
+    width: 90%;
+    max-width: 400px;
+}
+
+.input-field {
+    padding: 10px;
+    font-size:  1rem;
+    width: calc(50% - 20px);
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow : 0 2px 4px black;
+}
+
+#calculateButton{
+    background-color: rgb(50, 216, 38);;
+    color: black;
+}
+
+#calculateButton:hover {
+    background-color: rgb(42, 226, 18);
+}
+
+#result {
+    font-weight: bold;
+    margin-top:15px ;
+    font-size: 1.2rem;
+}
+
+#clock {
+    font-size: 1.5rem;
+    margin-top : 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    border-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgba(248, 240, 240, 0.988);
+    margin: auto;
+    padding: 20px;
+    bottom: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(13, 192, 13);
+    color: #000000;
+    bottom: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+     </style>
+</head>
+<body onload="Greeting()">
+    <img src="cognifyz.png" >
+
+    <div class="container">
+        <button id="changecolor">Click here to change my Color!</button>
+        <div id="clock">Time : </div>
+    </div>
+
+    <div class="container" id="calculator">
+        <h2>Addition Calculator</h2>
+        <input type="number" id="num1" class="input-field" placeholder="Enter 1st Number">
+        <input type="number" id="num2" class="input-field" placeholder="Enter 2nd Number">
+        <div>
+            <button id="calculateButton">Calculate</button>
+        </div>
+        <div id="result">Result : </div>
+    </div>
+    <div id="greetingModal" class="modal">
+        <div class="modal-content">
+            <p id="greetingMessage"></p>
+            <button class="start-button" onclick="closeModal()">Let's Start</button>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+     <script>
+        const changecolor = document.getElementById('changecolor');
+const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for(let i = 0; i < 6 ; i++){
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+};
+changecolor.addEventListener('click' , () => {
+    const newColor = getRandomColor();
+    changecolor.style.backgroundColor = newColor;
+    changecolor.style.color = 'white';
+});
+
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    const now = new Date();
+    clockElement.textContent = `Time : ${now.toLocaleTimeString()}`;
+}
+setInterval(updateClock , 1000);
+
+const calculateButton = document.getElementById('calculateButton');
+calculateButton.addEventListener('click' , () => {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+
+    if(isNaN(num1) || isNaN(num2)) {
+        document.getElementById('result').ineerText = 'Result : Please Enter valid numbers';
+        return;
+    }
+
+    const sum = num1 + num2 ;
+    document.getElementById('result').innerText = `Result : ${sum}`;
+});
+
+function Greeting() {
+    const now = new Date();
+    const hours = now.getHours();
+    let greeting;
+
+    if(hours < 12) {
+        greeting = "Good Morning";
+    }
+    else if(hours < 18){
+        greeting = "Good Afternoon!";
+    }
+    else if(hours < 22){
+        greeting = "Good Evening";
+    }
+    else {
+        greeting = "Good Night!";
+    }
+
+    document.getElementById('greetingMessage').innerText = greeting;
+    document.getElementById('greetingModal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('greetingModal').style.display = 'none';
+}
+     </script>
+</body>
+</html>
