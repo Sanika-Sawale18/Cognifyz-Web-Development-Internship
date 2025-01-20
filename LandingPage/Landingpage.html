@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page cognifyz</title>
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <style>
+        body {
+                margin: 0;
+                font-family: "Poppins", sans-serif;
+                background-color: rgb(250, 248, 250);
+            }
+
+header {
+    background-image: linear-gradient(to top , rgb(47, 47, 247) 15.2% , rgb(255, 185, 197) 79.1%);
+    color: white;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    background:white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.nav-bar {
+    width : 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.logo {
+    padding-left: 10%;
+    padding-right: 2%;
+    margin: 0;
+    width:200px;
+    height: 200px;
+   
+}
+
+.links {
+    list-style-type: none;
+    display : flex;
+    gap: 1.5em;
+    padding: 0 ;
+    padding-right: 5%;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.links li {
+    position: relative;
+}
+.links a{
+    text-decoration: none;
+    color: rgb(8, 6, 6);
+    font-weight: 600;
+    transition: color 0.3s;
+  
+}
+
+.links a:hover {
+    color: rgb(1, 14, 253) ;
+    padding: 15px;
+    transform: scale(1.6);
+}
+
+.header-content {
+    margin-top: 0em;
+    margin-left: 3.5em;
+    margin-right: 4em;
+    display: flex;    
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    text-shadow: black;
+}
+
+.header-content p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: black;
+}
+
+.header-content img {
+    margin-left: 30%;
+    width: 600px;
+    height:450px;
+    border-radius: 50%;
+}
+
+#learn {
+    background: rgb(255, 231, 12);
+    color: rgb(8, 7, 8);
+    border: none;
+    padding: 0.8em 2em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+#learn:hover {
+    background: rgb(248, 251, 108);
+}
+
+#intro-sec {
+    padding: 4em 2em;
+    text-align: center;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.card {
+    background:linear-gradient(to top , rgb(161, 7, 238) , white);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2em;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow:  6px 12px rgb(134, 133, 133);
+}
+
+.card h3{
+    color: #020205;
+    font-size: bold;
+}
+
+.card p {
+    color: #2e2929;
+}
+
+#service-sec {
+    padding: 40px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+#service-sec h2 {
+    margin-bottom : 30px;
+    color : #333;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.services {
+    width : 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(to top , #fcbbb6, white );
+    transition: transform 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.services:hover {
+    transform: scale(1.05);
+}
+
+.services img {
+    max-width: 7.5em;
+    height : auto;
+    margin-bottom: 15px;
+}
+
+.services h3 {
+    text-align: center;
+    font-weight: bolder;
+    color: #4605dd;
+}
+
+@media (max-width: 768px) {
+    .services {
+        width : 150px;
+        margin: 10px auto;
+    }
+}
+
+#review-sec {
+    padding : 40px;
+    background-color: #6d696965;
+    text-align: center;
+}
+
+#review-sec h2 {
+    margin-bottom: 30px;
+}
+
+.container3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.reviews {
+    width : 350px;
+    padding : 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(117, 1, 149, 0.804);
+    box-shadow: 2px 2px 5px rgba(9, 9, 9, 0.1);
+    text-align: left;
+    font-family: Georgia;
+}
+
+.reviews:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+.reviews .info {
+    display: flex;
+    align-items: center ;
+    margin-bottom: 10px;
+}
+
+.reviews img {
+    width : 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.reviews .name {
+    font-weight: bold;
+}
+
+.review p {
+    font-style: italic;
+    color: #555;
+}
+@media (max-width:768px) {
+    .reviews {
+        width : 90%;
+    }
+}
+
+#cta-sec {
+    background: linear-gradient(150deg, #fba59f 25.1% ,blue );
+    color: white;
+    padding: 4em 2em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#cta-sec h2 {
+    margin-bottom: 1.5em;
+    margin-left: 1.1em;
+}
+
+#cta-sec button {
+    background: #f1b616;
+    color : #06066c;
+    border : none;
+    padding : 1em 2.5em;
+    font-size: 1.5em;
+    font-weight: bolder;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#cta-sec button:hover {
+    background: #efdc2a;
+    transform: scale(1.1);
+}
+
+footer {
+    background: #0b0a0a;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color:#ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer img {
+    height: 3.2em;
+    width: 5.5em;
+    vertical-align: middle;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <img src="cognifyz.png" alt="Cognifyz Technologies Logo" class="logo">
+            <ul class="links">
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="https://cognifyz.com/about-us/">About Us</a></li>
+                <li><a href="https://cognifyz.com/courses/">Courses</a></li>
+                <li><a href="https://cognifyz.com/blog/">Blog</a></li>
+                <li><a href="https://cognifyz.com/contact-us/">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="header-content">
+            <div style="max-width: 50%; margin-right: 2%;">
+                <h1  style="text-shadow: 2px 1px black;">Join Our Web Internship Program</h1>
+                <p>Kickstart Your career with hands-on experience and industry exposure.</p>
+                <button id="learn" onclick="location.href='https://cognifyz.com/internships/'">Learn More</button>
+            </div>
+            <img src="photo3.png"  class="image" >
+        </div>
+    </header>
+    <section id="intro-sec">
+        <h1>Why Choose Us?</h1>
+        <div class="container1">   <!-- card section   -->
+            <div class="card">
+                <h3>Real-World Projects</h3>
+                <p>Work on live projects to gai real-world experience and enhance your skills.</p>
+            </div>
+            <div class="card">
+                <h3>Mentorship</h3>
+                <p>Receive Guidance from experienced professionlas to help you grow.</p>
+            </div>
+            <div class="card">
+                <h3>Latest Technologies</h3>
+                <p>Learn and work with the latest technologies in the industry.</p>
+            </div>
+            <div class="card">
+                <h3>Full-time Opportunity</h3>
+                <p>Get the chnace for full-time position upon successful completion of the internship.</p>
+            </div>
+            <div class="card">
+                <h3>Hands-on Projetcs</h3>
+                <p>Work on real-life projects to boost your portfolio and skills.</p>
+            </div>
+            <div class="card">
+                <h3>Flexible Learning</h3>
+                <p>Access our resources and learn at your own pace, anytime, anywhere.</p>
+            </div>
+        </div>
+        <!-- <div class="container2">
+            <img src="photo4.jpg" alt="Team Collanorating on a project.">
+        </div> -->
+    </section>
+
+    <!-- Referred this section from Cognifyz Website -->
+    <section id="service-sec">
+        <h2>Our Services</h2>
+        <div class="container2">
+            <div class="services">
+                <img src="IoT.png" alt="1-service">
+                <h3>Internet Of Things(IoT) </h3>
+                <p>Our expert Consultant help you develop a tailored IoT strategy aligned with your business objectives.We handle everything, so you can focus on your core business.</p>
+            </div>
+            <div class="services">
+                <img src="data.jpg" alt="2-service">
+                <h3>Data & Analytics</h3>
+                <p>We offer comprehensive data analytics services to help you extract valuable insights from your data and make data-driven decisions. </p>
+            </div>
+            <div class="services">
+                <img src="digital.jpg" alt="3-service">
+                <h3>Digital Marketing</h3>
+                <p>Our digital Marketingteam provide effective marketing solutions that drive traffic, generate leads, and increase conversions. </p>
+            </div>
+            <div class="services">
+                <img src="consult.jpg" alt="4-service">
+                <h3>Consulting Services</h3>
+                <p>Our Consulting expert provide a services to help businesses to overcome challenges, achieve their goals, and drive growth. </p>
+            </div>
+            <div class="services">
+                <img src="ecom.jpg" alt="5-service">
+                <h3>E-commerce Solutions </h3>
+                <p>We develop robust and scalable e-commerce platforms that provide all the necessary tools for managing your online business.</p>
+            </div>
+            <div class="services">
+                <img src="word1.jpg" alt="5-service">
+                <h3>WordPress Solutions </h3>
+                <p>our team provide a WordPress developmenyt services, from website design and developmentto maintenance and support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- In this section Intern details are referred from congnifyz Technologies Website. I used this info to add more details about cognifys Technologies-->
+    <section id="review-sec">
+        <h2>What Our Interns Say!</h2>
+        <div class="container3">
+            <div class="reviews">
+                <div class="info">
+                    <img src="g1.jpeg"  alt="1-intern">
+                    <div class="details">
+                        <span class="name">Sadhanaa Rameshkumar</span>
+                        <br>
+                        <span class="position">Data Science Intern</span>
+                    </div>
+                </div>
+                <p>Cognifyz is more than a workplace; it's where data dreams take flight. Grateful for the journey, I now invite others to script their unique data narratives at Cognifyz. Apply now to join the legacy! </p>
+            </div>
+            <div class="reviews">
+                <div class="info">
+                    <img src="b1.jpg"  alt="2-intern">
+                    <div class="details">
+                        <span class="name">PadmaNhusham Dhoke</span>
+                        <br>
+                        <span class="position">Intermediate Joiner</span>
+                    </div>
+                </div>
+                <p>I had the opportunity to work on a cutting-edge Investment Analysis Dashboard using Power BI. The dashboard provides a comprehensive overview of key metrics, enabling insightful decision-making for investment strategies.</p>
+            </div>
+            <div class="reviews">
+                <div class="info">
+                    <img src="b2.webp"  alt="3-intern">
+                    <div class="details">
+                        <span class="name">Thirumala Sai Harsha</span>
+                        <br>
+                        <span class="position">B.Tech Student</span>
+                    </div>
+                </div>
+                <p> The structured tasks and insightful HR interview helped me discover more about myself. Grateful for this invaluable experience with Cognifyz! </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="cta-sec">
+        <h2>Ready to Join?</h2>
+        <button onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLScd5TRLHUVC8kle_6k4JceWTcfknRoNsuRB6Q4ymhGrAIsnSA/viewform'">Apply Now</button>
+    </section>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYera());</script> Cognifyz Technologies | Contact us at <a href="mailto:info@cognifyz.com">info@cognifyz.com</a> | Phone: +1-234-567-890 | Location: Nagpur, Maharashtra</p>
+        <img src="cognifyz1.png" alt="cognifyz Technologies Logo" class="footer-img">
+    </footer>
+</body>
+</html>
