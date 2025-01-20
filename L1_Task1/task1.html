@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognifyz</title>
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+     <style>
+        * {
+              margin: 0;
+              color: rgb(1, 1, 1);
+          }
+
+.logo {
+    height :auto;
+    width : 10em;
+    /* margin-right: 100px; */
+}
+
+header {
+    width: 100%;
+    height : 9em;
+    background: linear-gradient(to top left , rgb(186, 8, 186) , white);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.links {
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.links:hover {
+    color: white;
+    font-size: 20px;
+}
+.section-1 h2 {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 1em;
+    margin-left: 20%;
+    height: 50px;
+    width:900px;
+    border: 1px solid white;
+    background:rgba(121, 9, 161, 0.808);
+    color: white;
+}
+.section-1 h2:hover {
+    background-color: rgba(242, 195, 10, 0.919);
+    color: rgb(217, 8, 109);
+}
+
+.section-1 p {
+    text-align: center;
+    margin-bottom: 2em;
+    color: rgb(0, 0, 0);
+}
+
+.section-2 h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: rgb(28, 200, 5);
+}
+
+.section-2 p {
+    text-align: center;
+    margin-bottom: 1em;
+    color: rgb(0, 0, 0);
+}
+
+.section-3 {
+    margin-left: 35%;
+    margin-top: 50px;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgba(119, 118, 118, 0.352);
+    box-shadow: 0 6px 10px  black;
+    max-width : 400px;
+    width: 100%;
+}
+
+.section-3 h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.section-3 input,
+.section-3 textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.section-3 button {
+    padding: 15px;
+    margin-left: 40%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(53, 196, 53);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.section-3 button:hover {
+    transform: scale(1.1);
+}
+     </style>
+</head>
+<body>
+    <header>
+        <img src="cognifyz.png" class="logo">
+        <nav>
+            <a class="links">Home</a>
+            <a class="links">About Us</a>
+            <a class="links">Services</a>
+            <a class="links">Contact Us</a>
+        </nav>
+    </header><br><br>
+    <div class="section-1">
+        <h2>Empowering the next generation of Tech Professionals...</h2>
+        <p>
+            Cognnifyz empowers aspiring tech professionals with real-world internship opportunities, developing them to lead the future of technology. We offer comprehensive courses in-demand Technologies.
+        </p><br>
+    </div>
+
+    <!-- This tagline is taken from cognifyz technnologies website-->
+    <div class="section-2">
+        <h2>Innovate or Stagnate, Technology waits for no one!</h2>
+        <p>
+            Cognifyz offers a dynamic learning environment where you can master the latest technologies through expert-led courses and gain invaluable real-world experience through internships. Don't get left behind. We are commited to providing aspiring tech professinlas with the most relevant and forword-thinking training.
+        </p><br>
+        <p>Our Courses and internship are designed to equip you with the skills, knowledge, and experience necessary to not only navigate the ever-changing tech landscape but to actively shape its future.</p>
+    </div>
+    <div class="section-3">
+       <h1>Contact Us</h1>
+       <form action="#" method="post">
+           <label for="name">Name : </label>
+           <input type="text" name="name" placeholder="Your Name Here" required>
+
+           <label for="email">Email : </label>
+           <input type="email" name="email" placeholder="Email Address" required>
+
+           <label for="message">Message : </label>
+           <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+           <button type="submit">Submit</button>
+       </form>
+    </div>
+</body>
+</html>
